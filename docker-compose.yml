@@ -1,0 +1,24 @@
+version: "3.5"
+
+services:
+  clamav:
+    build: .
+    environment:
+      MODE: av
+    ulimits:
+      stack: 1048576
+    volumes:
+      - conf:/etc/clamav
+      - data:/var/lib/clamav
+
+  freshclam:
+      build: .
+      environment:
+        MODE: updater
+      volumes:
+      - conf:/etc/clamav
+      - data:/var/lib/clamav
+
+volumes:
+  conf:
+  data:

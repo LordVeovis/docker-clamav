@@ -8,13 +8,13 @@ An alpine-based docker container providing clamav.
 
 This container provides clamav.
 
-* Alpine 3.8.2
+* Alpine 3.9
 * clamav 0.100.2
 
 ## Installing
 
 See [docker-compose.yml](https://github.com/LordVeovis/docker-clamav/blob/master/docker-compose.yml) for an example of how to configure the container.
-clamav require a configuration file that MUST be mapped to /etc/clamav/clamd.conf, as indicated on the [docker-compose.yml](https://github.com/LordVeovis/docker-clamav/blob/master/docker-compose.yml).
+Both clamav and freshclam require a configuration file. If the /etc/clamav is empty, the container provides a suitable default configuration.
 Please look at the official [documentation](https://www.clamav.net/documents/configuration) for help on the configuration file.
 
 ## Contributing
