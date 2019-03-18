@@ -1,4 +1,4 @@
-[![](https://img.shields.io/docker/pulls/veovis/clamav.svg)](https://hub.docker.com/r/veovis/clamav) ![](https://img.shields.io/microbadger/image-size/veovis%2Fclamav.svg) [![](https://img.shields.io/github/tag/LordVeovis/docker-clamav.svg)](https://github.com/LordVeovis/docker-clamav/tags) [![](https://img.shields.io/github/license/LordVeovis/docker-clamav.svg)](https://github.com/LordVeovis/docker-clamav/blob/master/LICENSE)
+![](https://img.shields.io/docker/cloud/build/veovis/clamav.svg) [![](https://img.shields.io/docker/pulls/veovis/clamav.svg)](https://hub.docker.com/r/veovis/clamav) ![](https://img.shields.io/microbadger/image-size/veovis%2Fclamav.svg) [![](https://img.shields.io/github/tag/LordVeovis/docker-clamav.svg)](https://github.com/LordVeovis/docker-clamav/tags) [![](https://img.shields.io/github/license/LordVeovis/docker-clamav.svg)](https://github.com/LordVeovis/docker-clamav/blob/master/LICENSE)
 
 # clamAV
 
