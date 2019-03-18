@@ -10,12 +10,26 @@ This container provides clamav.
 
 * Alpine 3.9
 * clamav 0.100.2
+* clamav-milter 0.100.2
 
 ## Installing
 
 See [docker-compose.yml](https://github.com/LordVeovis/docker-clamav/blob/master/docker-compose.yml) for an example of how to configure the container.
-Both clamav and freshclam require a configuration file. If the /etc/clamav is empty, the container provides a suitable default configuration.
+Both clamav, freshclam and clamav-milter require a configuration file. If the /etc/clamav is empty, the container provides a suitable default configuration.
 Please look at the official [documentation](https://www.clamav.net/documents/configuration) for help on the configuration file.
+
+## Environment variables
+
+* MODE: determine the service to run. The values can be:
+  * av: clamd, the anti-virus engine
+  * updater: freshclam, it updates the signatures
+  * milter: clamav-milter, it provides an interface to milter clients to use clamd
+* INITIAL_UPDATE: if 1, it triggers a manual update of the signatures. It should not be very useful except for the very first time when clamd is run before freshclam.
+
+## Ports
+
+* 7357: clamav-milter exposes this TCP port by default for milter clients
+* 3310: clamd exposes this TCP port by default for remote control. freshclam uses it to notify clamd the database has been updated
 
 ## Contributing
 

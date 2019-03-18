@@ -12,12 +12,19 @@ services:
       - data:/var/lib/clamav
 
   freshclam:
-      build: .
-      environment:
-        MODE: updater
-      volumes:
-      - conf:/etc/clamav
-      - data:/var/lib/clamav
+    build: .
+    environment:
+      MODE: updater
+    volumes:
+    - conf:/etc/clamav
+    - data:/var/lib/clamav
+
+  clamav-milter:
+    build: .
+    environment:
+      MODE: milter
+    volumes:
+    - conf:/etc/clamav
 
 volumes:
   conf:
