@@ -12,6 +12,7 @@ RUN set -xe; \
 	sed -i 's/^#\(Foreground \).*/\1yes/' $CLAMAV_ETC/clamav-milter.conf; \
 	sed -i 's/^#\(TCPSocket \)/\1/' $CLAMAV_ETC/clamd.conf; \
 	sed -i 's/^#\(MilterSocket inet:7357\).*/\1/' $CLAMAV_ETC/clamav-milter.conf; \
+	sed -i 's/^#\(ClamdSocket \).*/\1tcp:clamav:3310/' $CLAMAV_ETC/clamav-milter.conf; \
 	tar -cvjf /etc/_clamav.tar.bz2 etc/clamav
 
 COPY entrypoint.sh /docker-entrypoint.sh

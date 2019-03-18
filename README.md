@@ -18,6 +18,19 @@ See [docker-compose.yml](https://github.com/LordVeovis/docker-clamav/blob/master
 Both clamav, freshclam and clamav-milter require a configuration file. If the /etc/clamav is empty, the container provides a suitable default configuration.
 Please look at the official [documentation](https://www.clamav.net/documents/configuration) for help on the configuration file.
 
+As all 3 daemons (clamd, freshclam, clamav-milter) are running in separate containers, they cannot use local socket to communicate. Hence, as already included in the default configuration, please configure at least thoses settings :
+* /etc/clamav/freshclam.conf:
+  * Foreground: MUST be set to yes
+* /etc/clamav/clamd.conf:
+  * Foreground: MUST be set to yes
+  * TCPSocket: MUST be set with a port reachable by freshclam. Ex: TCPSocket 3310
+* /etc/clamav/clamav-milter.conf:
+  * Foreground: MUST be set to yes
+  * MilterSocket: MUST be set to a port reachable by milter clients. Ex: MilterSocket inet:7357
+  * ClamdSocket: MUST be set to the hostname and port of clamd. Ex: ClamdSocket tcp:clamav:3310
+
+Please note that if thoses containers are in the same stack, they already share a dedicated network subnet, rendering the port directive in docker-compose useless. In fact, it would be a security weakness.
+
 ## Environment variables
 
 * MODE: determine the service to run. The values can be:
