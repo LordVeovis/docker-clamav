@@ -5,7 +5,7 @@ ENV CLAMAV_VAR_LIB /var/lib/clamav
 ENV CLAMAV_RUN /run/clamav
 
 RUN set -xe; \
-	apk add clamav-daemon clamav-milter su-exec; \
+	apk add clamav-daemon clamav-milter clamav-libunrar su-exec; \
 	install -d -o clamav -g clamav -m 755 /run/clamav; \
 	sed -i 's/^#\(Foreground\)/\1/' $CLAMAV_ETC/freshclam.conf; \
 	sed -i 's/^#\(Foreground \).*/\1yes/' $CLAMAV_ETC/clamd.conf; \
