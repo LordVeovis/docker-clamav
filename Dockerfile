@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.13
 
 ENV CLAMAV_ETC /etc/clamav
 ENV CLAMAV_VAR_LIB /var/lib/clamav
