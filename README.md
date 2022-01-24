@@ -8,9 +8,9 @@ An alpine-based docker container providing clamav.
 
 This container provides clamav.
 
-* Alpine 3.14
-* clamav 0.103.3
-* clamav-milter 0.103.3
+* Alpine 3.15
+* clamav 0.104.1
+* clamav-milter 0.104.1
 
 ## Installing
 

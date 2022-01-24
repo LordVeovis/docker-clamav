@@ -5,7 +5,7 @@ set -e
 if [ "$#" -eq 0 ] || [ "${1#-}" != "$1" ]; then
     case $MODE in
         av)
-            echo 'Running in anvi-virus mode...'
+            echo 'Running in anti-virus mode...'
             set -- /usr/sbin/clamd $@
             ;;
         updater)
