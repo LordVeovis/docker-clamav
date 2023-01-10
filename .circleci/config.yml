@@ -5,7 +5,7 @@ executors:
     environment:
       IMAGE_NAME: veovis/clamav
     docker:
-      - image: circleci/buildpack-deps:stretch
+      - image: cimg/base:current
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker:
-          version: 20.10.6
+          version: 20.10.12
       - run:
           name: Build Docker image
           command: docker build --pull -t $IMAGE_NAME:${CIRCLE_TAG:-latest} .

@@ -1,16 +1,22 @@
-[![](https://img.shields.io/docker/cloud/build/veovis/clamav.svg)](https://hub.docker.com/r/veovis/clamav/builds) [![](https://img.shields.io/docker/pulls/veovis/clamav.svg)](https://hub.docker.com/r/veovis/clamav) ![](https://img.shields.io/microbadger/image-size/veovis%2Fclamav.svg) [![](https://img.shields.io/github/tag/LordVeovis/docker-clamav.svg)](https://github.com/LordVeovis/docker-clamav/tags) [![](https://img.shields.io/github/license/LordVeovis/docker-clamav.svg)](https://github.com/LordVeovis/docker-clamav/blob/master/LICENSE)
+[![](https://img.shields.io/circleci/build/github/LordVeovis/docker-clamav?style=flat-square)](https://app.circleci.com/pipelines/github/LordVeovis/docker-clamav)
+[![](https://img.shields.io/docker/pulls/veovis/clamav.svg?style=flat-square)](https://hub.docker.com/r/veovis/clamav)
+![](https://img.shields.io/docker/image-size/veovis/clamav?style=flat-square)
+[![](https://img.shields.io/github/tag/LordVeovis/docker-clamav.svg?style=flat-square)](https://github.com/LordVeovis/docker-clamav/tags)
+[![](https://img.shields.io/github/license/LordVeovis/docker-clamav.svg?style=flat-square)](https://github.com/LordVeovis/docker-clamav/blob/master/LICENSE)
 
 # clamAV
 
 An alpine-based docker container providing clamav.
 
+Note: you should use the [official ClamAV](https://hub.docker.com/r/clamav/clamav) image instead.
+
 ## Details
 
 This container provides clamav.
 
-* Alpine 3.15
-* clamav 0.104.2
-* clamav-milter 0.104.2
+* Alpine 3.17
+* clamav 0.105.1
+* clamav-milter 0.105.1
 
 ## Installing
 
